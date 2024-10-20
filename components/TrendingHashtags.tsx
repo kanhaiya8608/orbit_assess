@@ -1,4 +1,3 @@
-// components/TrendingHashtags.tsx
 import React from 'react';
 import { ScrollView, View, Image, Text, StyleSheet } from 'react-native';
 

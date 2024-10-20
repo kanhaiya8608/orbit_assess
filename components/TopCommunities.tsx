@@ -1,4 +1,3 @@
-// components/TopCommunities.tsx
 import React from 'react';
 import { FlatList, View, Image, Text, StyleSheet } from 'react-native';
 
