@@ -1,34 +1,68 @@
 import { Tabs } from 'expo-router';
-import React from 'react';
-
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-      }}>
+        tabBarActiveTintColor: 'blue',
+        tabBarLabelStyle: {
+          fontSize: 12, 
+          paddingBottom: 5, 
+        },
+        tabBarStyle: {
+          paddingBottom: 10, 
+          height: 70,
+         },
+      }}
+    >
       <Tabs.Screen
-        name="index"
+        name="home"
         options={{
+          headerShown: false,
           title: 'Home',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
+            <Ionicons name={focused ? 'home-sharp' : 'home-outline'} color={color} size={28} />
           ),
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="index"
         options={{
-          title: 'Explore',
+          headerShown: false,
+          title: 'Search',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+            <Ionicons name={focused ? 'search-sharp' : 'search-outline'} color={color} size={28} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="create"
+        options={{
+          headerShown: false,
+          title: 'Create',
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name={focused ? 'add-circle-sharp' : 'add-circle-outline'} color={color} size={28} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="community"
+        options={{
+          headerShown: false,
+          title: 'Community',
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name={focused ? 'people-sharp' : 'people-outline'} color={color} size={28} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="info"
+        options={{
+          headerShown: false,
+          title: 'Me',
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name={focused ? 'person-sharp' : 'person-outline'} color={color} size={28} />
           ),
         }}
       />
